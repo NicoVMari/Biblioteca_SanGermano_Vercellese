@@ -1,4 +1,9 @@
 # Biblioteca SanGermano Vercellese
+
+ 
+ 	
+Il sito web che creerò sarà dedicato alla biblioteca di San Germano Vercellese, un paesino vicino alla mia zona. Ho ottenuto il consenso dalla bibliotecaria che lavora presso la biblioteca per mettere il sito online una volta che sarà completato. All'interno del sito, sarà possibile consultare l'elenco completo dei libri presenti nella biblioteca, rimanere aggiornati sulle ultime novità ed eventi organizzati dalla biblioteca stessa e, per gli utenti registrati, prenotare i libri per il prestito.
+
 **Anno accademico 2022/2023** Progetto d’esame 
 
 **MF0438 Metodologie di programmazione per il Web MODALITÀ D’ESAME** 
