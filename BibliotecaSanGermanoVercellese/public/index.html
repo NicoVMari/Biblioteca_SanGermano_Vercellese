@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <script defer src="./js/templates/homePage.js"></script>
+     <script defer src="./js/templates/informationPage.js"></script>
+     <script defer src="./js/templates/eventPage.js"></script>
+     <script defer src="./js/templates/reservationPage.js"></script>
+     <script defer src="./js/templates/buttons.js"></script>
+     <script defer src="./js/templates/profilePage.js"></script>
+     <script defer src="./js/api.js"></script>
+     <script defer src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+     <script defer src="./js/app.js"></script>
+     <script defer src="./js/main.js"></script>
+
+    <title>Biblioteca comunale San Germano Vercellese</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar navbar-expand-sm bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img src="media/images/San_Germano_Vercellese-Stemma-removebg-preview.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-btn-toolbar-collapse" aria-controls="navbar-btn-toolbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-btn-toolbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="navbar-brand" id="home-page-btn">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbar-brand" id="event-page-btn">Eventi</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbar-brand" id="reservation-page-btn">Prenotazioni</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbar-brand" id="information-page-btn">Informazioni</a>
+              </li>
+            </ul>
+          </div>
+          <div id="navbar-btn-toolbar" class="navbar-btn-toolbar">
+            <button id="login-btn" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#login-modal">Accedi</button>
+        </div>
+        </div>
+      </nav>
+    </header>
+
+    <div id="modals-container">
+      <button id="modals-toggle-button" type="button" data-bs-toggle="modal" data-bs-target="#utente-modal" hidden> Toggle forms </button>
+
+      <!-- Modal Login -->
+      <div class="modal fade" id="login-modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Accedi</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="login-form" name="login-form" method="post">
+              <div class="modal-body">
+                <input type="hidden" id="login-form-user-type" value="USER">
+                <div class="mb">
+                  <label for="login-form-username-email" class="form-label">Username o Email</label>
+                  <input type="text"  minlength="5" class="form-control" id="login-form-username-email" aria-describedby="username-validity" required>
+                  <div id="username-validity" class="invalid-feedback"></div>
+                </div>
+                <div class="mb">
+                  <label for="login-form-password" class="form-label">Password</label>
+                  <input type="password" minlength="6" class="form-control" id="login-form-password" aria-describedby="password-validity" required>
+                  <div id="password-validity" class="invalid-feedback"></div>
+                </div>
+                <div class="mb">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="login-form-type-utente">
+                    <label class="form-check-label" for="user-radio">
+                      User
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="login-form-type-curatore">
+                    <label class="form-check-label" for="curatore-radio">
+                      Curatore
+                    </label>
+                  </div>
+                  <div id="radio-error-message" class="invalid-feedback"></div>
+                </div>
+              </div>
+            <div class="modal-footer">
+              <a href="" data-bs-toggle="modal" data-bs-target="#signup-modal"> Non hai un account? Iscriviti! </a>
+              <button id="login-form-submit" type="submit" class="btn btn-success">Entra</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Registration -->
+      <div class="modal fade" id="signup-modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Registrati</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="signup-form" name="signup-form" method="post">
+              <input type="hidden" id="signup-form-user-type" value="UTENTE">
+              <div class="modal-body">
+                  <div class="mb">
+                    <label class="signup-form-username-email" class="form-label">Username o Email</label>
+                    <input type="text"  minlength="5" id="signup-form-username-email" class="form-control" aria-describedby="emailHelp" required>
+                  </div>
+                  <div class="mb">
+                      <label class="signup-form-password" class="form-label">Password</label>
+                      <input type="password"  minlength="6" id="signup-form-password" class="form-control" required>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <a href="" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#login-modal"> Hai già un account? Accedi! </a>
+                <button id="signup-form-submit" type="submit" class="btn btn-success">Iscriviti</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Dettagli -->
+      <div class="modal fade" id="dettagli-modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" id="dettagli-dinamic">
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Reservation -->
+      <div class="modal fade" id="reservation-modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <form method="post" name="reservation-form" id="reservation-form">
+              
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Utente -->
+      <div class="modal fade" id="utente-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div id="utente-modal-content" class="modal-content">
+            <div class="modal-header">
+                <h3>Creazione profilo Utente</h3>
+            </div>
+            <form id="utente-form" class="row g-3" request-type="post">
+              <div class="modal-body">
+                <div class="col">
+                    <label for="utente-name" class="form-label">Nome *</label>
+                    <input type="text" class="form-control" id="utente-name" required>
+                </div>
+                <div class="col">
+                    <label for="utente-surname" class="form-label">Cognome *</label>
+                    <input type="text" class="form-control" id="utente-surname" required>
+                </div>
+                <div class="col">
+                    <label for="utente-age" class="form-label">Età *</label>
+                    <input type="number" min="14" max="120" class="form-control" id="utente-age" required>
+                </div>
+                <div class="col">
+                    <label for="utente-city" class="form-label">Città *</label>
+                    <input type="text" class="form-control" id="utente-city" required>
+                </div>
+                <div class="col">
+                    <label for="utente-province" class="form-label">Provincia *</label>
+                    <input type="text" class="form-control" id="utente-province" required>
+                </div>
+                <div class="col">
+                    <label for="utente-contacts" class="form-label">Contatti *</label>
+                    <input type="text" class="form-control" id="utente-contacts" placeholder="es. telefono, indirizzo e-mail, account social" required>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="utente-profile-submit" type="submit" class="btn btn-success">Registrami</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book Modal -->
+      <div class="modal fade" id="book-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div id="book-modal-content" class="modal-content">
+
+            <div class="modal-header">
+                <h4>Carica un nuovo libro</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="book-form" class="row g-3" request-type="post">
+                <div class="col-12  container-space2">
+                    <label for="book-isbn" class="form-label">Isbn *</label>
+                    <input type="text" class="form-control" id="book-isbn" required>
+                    <div id="isbn-validity" class="invalid-feedback"></div>
+                </div>
+                <div class="col-12  container-space2">
+                    <label for="book-titolo" class="form-label">Titolo *</label>
+                    <input type="text" class="form-control" id="book-titolo" required>
+                </div>
+                <div class="col-12  container-space2">
+                    <label for="book-autore" class="form-label">Autore *</label>
+                    <input type="text" class="form-control" id="book-autore" required>
+                </div>
+                <div class="col-12  container-space2">
+                    <label for="book-editore" class="form-label">Editore *</label>
+                    <input type="text" class="form-control" id="book-editore" required>
+                </div>
+                <div class="col-12  container-space2">
+                    <label for="book-descrizione" class="form-label">Descrizione *</label>
+                    <input type="text" class="form-control" id="book-descrizione" required>
+                </div>
+                <div class="col-12  container-space2">
+                    <label for="book-genere" class="form-label">Genere *</label>
+                    <select class="form-select" id="book-genere" aria-label="Seleziona il genere">
+                        <option selected></option>
+                        <option value="Romanzo">Romanzo</option>
+                        <option value="Giallo">Giallo</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Storia">Storia</option>
+                        <option value="Biografia">Biografia</option>
+                        <option value="Disopia">Disopia</option>
+                    </select required> 
+                </div>
+                <div class="col-12  container-space2">
+                    <label for="book-anno_pubblicazione" class="form-label">Anno pubblicazione *</label>
+                    <input type="number" min="1900" max="2023" class="form-control" id="book-anno_pubblicazione" required>
+                </div>
+                <div class="col-12  container-space2">
+                    <label for="book-filepath" class="form-label">Foto copertina*</label>
+                    <input type="file" accept=".jpg,.jpeg,.png" class="form-control" id="book-filepath" required>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto container-space2">
+                    <button id="book-submit" type="submit" class="btn btn-success">Carica Libro</button>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Modal -->
+      <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div id="event-modal-content" class="modal-content">
+            <div class="modal-header">
+                  <h4>Carica un nuovo evento</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="event-form" class="row g-3" request-type="post">
+                <div class="col-12 container-space2">
+                    <label for="event-titolo" class="form-label">Titolo *</label>
+                    <input type="text" class="form-control" id="event-titolo" required>
+                </div>
+                <div class="col-12 container-space2">
+                    <label for="event-giorno" class="form-label">Giorno *</label>
+                    <input type="text" class="form-control" id="event-giorno" required>
+                </div>
+                <div class="col-12 container-space2">
+                    <label for="event-descrizione" class="form-label">Descrizione *</label>
+                    <input type="text" class="form-control" id="event-descrizione" required>
+                </div>
+                <div class="col-12 container-space2">
+                    <label for="event-filepath" class="form-label">Scegli una foto dell'evento!</label>
+                    <input type="file" accept=".jpg,.jpeg,.png" class="form-control" id="event-filepath" required>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto container-space2">
+                    <button id="event-submit" type="submit" class="btn btn-success">Carica Evento</button>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ricerca-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Nessun risultato durante la ricerca</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Non sono stati trovati libri dai dati ricevuti nella ricerca!
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div id="app-container">
+
+    </div>
+
+    <hr>
+
+    <footer>
+      <div class="container">
+        <div class="row shadow-row">
+          <div class="col-md-4">
+            <h5>Informazioni di contatto</h5>
+            <p>Indirizzo: Via Circonvallazione, San Germano Vercellese VC</p>
+            <p id="mail">Email: <a href="#mail">bibliotecasangermano@gmail.com</a></li></p>
+          </div>
+          <div class="col-md-4">
+            <h5>Link utili</h5>
+            <ul class="list-unstyled">
+              <li><a id="home-page-footer">Home</a></li>
+              <li><a id="event-page-footer">Eventi</a></li>
+              <li><a id="reservation-page-footer">Prenotazioni</a></li>
+              <li><a id="information-page-footer">Informazioni</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Social</h5>
+              <a href="https://www.instagram.com/biblioteca.sangermano/"><img src="media/images/instagram.svg" width="25" height="25" class="d-block w-100" alt="..."></a>
+          </div>
+        </div>
+        <hr>
+        <p>&copy; 2023 Biblioteca G. Deabate San Germano Vercellese, Nicolo' Vittorio Marino</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+Curatore
+
+Username: curatore.esame
+Password: password
+
+Utente
+
+Username: mario.rossi
+Password: password
+
+Username: luca.bianchi
+Password: password
+
+Username: gennaro.neri
+Password: password
+
+Link video: https://youtu.be/j8TUmdJaYKY
