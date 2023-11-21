@@ -142,3 +142,9 @@ Inoltre, può *cercare* una serie o un episodio con una ricerca testuale (nei ti
 Questa funzionalità è ovviamente offerta a tutti gli utenti del sito, anche a quelli non registrati.** 
 
 [^1]: Il caricamento di file audio può essere considerato un *extra*. Ai fini del progetto, è perfettamente accettabile che i file audio siano già disponibili nel server o siano recuperati dal Web, senza penalizzazione alcuna. 
+
+
+
+<p align="center">
+  <img src="https://github.com/NicoVMari/Biblioteca_SanGermano_Vercellese/assets/96552280/c18b32c1-def1-4d63-b518-9d6930ee0e27" alt="Testo alternativo" width="300" />
+</p>
