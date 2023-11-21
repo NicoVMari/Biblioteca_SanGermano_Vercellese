@@ -146,5 +146,5 @@ Questa funzionalità è ovviamente offerta a tutti gli utenti del sito, anche a 
 
 
 <p align="center">
-  <img src="https://github.com/NicoVMari/Biblioteca_SanGermano_Vercellese/assets/96552280/c18b32c1-def1-4d63-b518-9d6930ee0e27" alt="Testo alternativo" width="300" />
+  <img src="https://github.com/NicoVMari/Biblioteca_SanGermano_Vercellese/assets/96552280/c18b32c1-def1-4d63-b518-9d6930ee0e27" alt="Testo alternativo" width="150" />
 </p>
