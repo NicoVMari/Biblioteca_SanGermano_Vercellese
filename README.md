@@ -1,6 +1,4 @@
 # Biblioteca SanGermano Vercellese
-
- 
  	
 Il sito web che creerò sarà dedicato alla biblioteca di San Germano Vercellese, un paesino vicino alla mia zona. Ho ottenuto il consenso dalla bibliotecaria che lavora presso la biblioteca per mettere il sito online una volta che sarà completato. All'interno del sito, sarà possibile consultare l'elenco completo dei libri presenti nella biblioteca, rimanere aggiornati sulle ultime novità ed eventi organizzati dalla biblioteca stessa e, per gli utenti registrati, prenotare i libri per il prestito.
 
@@ -75,45 +73,9 @@ Il tema e lo scopo dell’applicazione web realizzata è a scelta dello studente
 - Funzionalità: l’applicazione deve prevedere **funzionalità di ricerca**, testuale, per keyword, geolocalizzazione, o altra modalità a scelta dello studente, funzionale all’applicazione stessa;  
 - Gestione dati: l’applicazione deve prevedere **l’utilizzo di un database** per l’inserimento, cancellazione e ricerca di contenuti; non è accettabile un’applicazione che utilizzi un database unicamente per memorizzare le credenziali di accesso degli utenti.  
 
-**Scadenze**  
-
-Non rispettare le scadenze delle seguenti consegne causerà un grave penalizzazione fino ad un massimo di 3 punti sul voto finale.  
-
-- Le specifiche devono essere comunicate al docente compilando il form disponibile al link [https://forms.gle/hvFj8qbrM8e4vw1Z8 ](https://forms.gle/hvFj8qbrM8e4vw1Z8)entro e non oltre il 25/04/2023. 
-- L’interfaccia grafica realizzata in HTML e CSS deve essere consegnata tramite caricamento sulla cartella condivisa GDrive entro e non oltre il 25/05/2023. 
-- L’elaborato finale deve essere consegnato entro i 3 giorni lavorativi precedenti alla data dell’esame tramite caricamento su DIR. 
-
 **Nota bene** 
 
 Alla consegna, l’applicazione web dovrà contenere almeno un utente e un database popolato da dati, anche fittizi, che consentano di testare tutte le funzionalità implementate. I nomi utente e le password di tali utenti devono essere forniti al docente (vedi dopo). 
-
-**ISTRUZIONI PER LA CONSEGNA DEL PROGETTO** 
-
-La consegna del progetto deve avvenire tramite il link “Consegna progetto” nella sezione *Esame* della pagina del corso su DIR, entro 3 giorni prima dell'appello (date precise nella pagina del corso). 
-
-La consegna dovrà contenere in un unico archivio (.zip): 
-
-- Codice sorgente dell’applicazione web realizzata, incluse: 
-  - eventuali dipendenze, immagini, … 
-  - dump del database utilizzato (preferibilmente in SQLite) 
-- Link a un video (caricato su YouTube, durata 3-5 minuti). Il video può essere realizzato a partire da una presentazione PowerPoint (o simili) e deve contenere: 
-  - le scelte di progettazione effettuate, in termini di layout, componenti utilizzati, struttura del DB, ecc. 
-  - le scelte implementative e funzionali adottate 
-- Un documento di testo (.md o .txt) contenente eventuali istruzioni per provare l’applicazione web (ad esempio, le credenziali degli utenti di prova) e il link al video 
-
-Ogni caricamento fatto dopo la data di consegna non sarà considerato. 
-
-**VALUTAZIONE DEL PROGETTO**
-
-La valutazione del progetto terrà conto: 
-
-- del rispetto dei requisiti tecnici e stilistici indicati  
-- della correttezza dell’implementazione (assenza di bug, crash, comportamenti inattesi)  
-- dell’appropriatezza delle scelte progettuali effettuate 
-- dell’accuratezza dell’implementazione (accuratezza dei controlli, personalizzazione del front end, usabilità, etc.) 
-- della complessità tecnica dei requisiti scelti 
-
-La valutazione del progetto sarà espressa in 30/30. Saranno previsti fino a 2 punti aggiuntivi che tengono conto della complessità dell’applicazione implementata e dell’accuratezza dell’implementazione sia dal punto di vista funzionale che tecnico/stilistico 
 
 **ESEMPIO DI PROGETTO** 
 
@@ -140,8 +102,6 @@ Un **utente non registrato** può, al di là di registrarsi come creatore o asco
 Inoltre, può *cercare* una serie o un episodio con una ricerca testuale (nei titoli e nelle descrizioni). La ricerca testuale potrà essere *raffinata* per categoria o scegliendo tra episodi/serie. Per esempio, un utente potrà cercare “JavaScript” tra i soli titoli e descrizioni degli episodi nella categoria “Tecnologia”. 
 
 Questa funzionalità è ovviamente offerta a tutti gli utenti del sito, anche a quelli non registrati.** 
-
-[^1]: Il caricamento di file audio può essere considerato un *extra*. Ai fini del progetto, è perfettamente accettabile che i file audio siano già disponibili nel server o siano recuperati dal Web, senza penalizzazione alcuna. 
 
 
 
