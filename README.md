@@ -1,8 +1,7 @@
 # Biblioteca SanGermano Vercellese
- 	
-Il sito web che creerò sarà dedicato alla biblioteca di San Germano Vercellese, un paesino vicino alla mia zona. Ho ottenuto il consenso dalla bibliotecaria che lavora presso la biblioteca per mettere il sito online una volta che sarà completato. All'interno del sito, sarà possibile consultare l'elenco completo dei libri presenti nella biblioteca, rimanere aggiornati sulle ultime novità ed eventi organizzati dalla biblioteca stessa e, per gli utenti registrati, prenotare i libri per il prestito.
-
-**Anno accademico 2022/2023** Progetto d’esame  **MF0438 Metodologie di programmazione per il Web MODALITÀ D’ESAME** 
+ 
+**Anno accademico 2022/2023** Progetto d’esame  **MF0438 Metodologie di programmazione per il Web** 
+**MODALITÀ D’ESAME** 
 
 L’esame di Metodologie di programmazione per il Web consta di due parti, strettamente collegate ed entrambe obbligatorie: 
 
@@ -101,7 +100,7 @@ Inoltre, può *cercare* una serie o un episodio con una ricerca testuale (nei ti
 
 Questa funzionalità è ovviamente offerta a tutti gli utenti del sito, anche a quelli non registrati.** 
 
-
+Il sito web che creerò sarà dedicato alla biblioteca di San Germano Vercellese, un paesino vicino alla mia zona. Ho ottenuto il consenso dalla bibliotecaria che lavora presso la biblioteca per mettere il sito online una volta che sarà completato. All'interno del sito, sarà possibile consultare l'elenco completo dei libri presenti nella biblioteca, rimanere aggiornati sulle ultime novità ed eventi organizzati dalla biblioteca stessa e, per gli utenti registrati, prenotare i libri per il prestito.
 
 <p align="center">
   <img src="https://github.com/NicoVMari/Biblioteca_SanGermano_Vercellese/assets/96552280/c18b32c1-def1-4d63-b518-9d6930ee0e27" alt="Testo alternativo" width="800" />
